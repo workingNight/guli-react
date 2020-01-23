@@ -1,17 +1,25 @@
 // 应用的根组件
 
 import React, { Component } from 'react';
-import { Button } from 'antd'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import Admin from './pages/admin/index';
+import Login from './pages/login/index'
 
 
-export default class App extends Component {
-
-
+class App extends Component {
     render() {
         return (
-        <div className="App">
-            <Button type="primary">Button</Button>
-        </div>
+            <BrowserRouter>
+                <Switch>
+                    {/*里面的component不要大写*/}
+                    <Route path='/login' component={Login} />
+                    <Route path='/' component={Admin} />
+                </Switch>
+            </BrowserRouter>
         );
     }
 }
+
+
+export default App;

@@ -6,7 +6,10 @@ serve -s build
 -S就是--save的简写
 -D就是--save-dev  这样安装的包的名称及版本号就会存在package.json的devDependencies这个里面，而--save会将包的名称及版本号放在dependencies里面。一个是开发依赖一个是生产依赖。
 
-
+### 遇见的一些小问题  
+- 代码补全失效  
+@tag:usesOnlineServices   -->  Typescript
+参考网址[简书，禁用Typescript检测](https://www.jianshu.com/p/179f16d43026)
 
 
 ###  src文件基本结构
@@ -32,6 +35,21 @@ yarn add react-app-rewired customize-cra babel-plugin-import 再配置一下
 
 ### 引入路由
 
+### 引入reset  
+重置样式
+<link rel="stylesheet" href="/css/reset.css">
+这里有个小坑 引入时路径不要加href="./css/reset.css"
+
+### postman相关
+save 建立集合 Import导入..
+post请求 
+Body    form-data带文件的表单 
+        x-www-form-urlencoded 纯文本的表单
+        raw binary 文件的
+
+
+### ajax相关
+封装axios
 
 
 
