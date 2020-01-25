@@ -65,7 +65,10 @@ Access-Control-Allow-Origin
 3. 代理
 
 ### 维持登录与自动登录
-浏览器缓存 localstorge
+优化登录  
+- 在内存中缓存。  momoryUtils
+- 浏览器缓存 localstorge
+
 
 
 
