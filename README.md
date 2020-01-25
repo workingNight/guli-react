@@ -34,6 +34,7 @@ yarn add react-app-rewired customize-cra babel-plugin-import 再配置一下
 需要用到 less 变量覆盖功能。我们可以引入 customize-cra 中提供的 less 相关的函数 **addLessLoader** 来帮助加载 less 样式
 
 ### 引入路由
+<BrowserRouter> <Route> <Switch>
 
 ### 引入reset  
 重置样式
@@ -50,6 +51,22 @@ Body    form-data带文件的表单
 
 ### ajax相关
 封装axios
+使用async 和 await简化promise的使用,不再使用then()来指定成功/失败的回调函数
+以同步编码的方式来实现异步编程
+
+
+### 配置代理处理跨域问题
+- package.json
+"proxy": "http://localhost:5000"
+Access-Control-Allow-Origin
+- 跨域方案
+1. jsonp get
+2. cors
+3. 代理
+
+### 维持登录与自动登录
+浏览器缓存 localstorge
+
 
 
 

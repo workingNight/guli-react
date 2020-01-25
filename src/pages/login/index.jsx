@@ -4,6 +4,9 @@ import { Form, Input, Button, Icon } from 'antd'
 import './login.less'   /* 引入less文件 */
 import logo from '../../asserts/images/logo.png'
 
+/* 关于要不要写大括号---集体暴露就不用写大括号 分别暴露就要写{} */
+import { reqLogin } from '../../api'
+
 const Item = Form.Item;  /* 不能写在Import之前 */
 
 
@@ -17,16 +20,23 @@ const Item = Form.Item;  /* 不能写在Import之前 */
         event.preventDefault()
 
         //对所有的表单字段进行校验
-        this.props.form.validateFields((err, values) => {
+        this.props.form.validateFields(async(err, values) => {
             if(!err) {
-                console.log('提交登录的ajax请求',values)
+                const {username, password} = values
+                try {
+                    const response = await  reqLogin(username, password)
+                    console.log('请求成功'+response.data)
+                } catch (error) {
+                    console.log('请求错误'+error)
+                }
+               
             }else {
                 console.log('校验失败！');
             }
         })
 
-        const form = this.props.form
-        const values = form.getFieldsValue()
+        // const form = this.props.form
+        // const values = form.getFieldsValue()
         /* 注意细节
         getFieldsValue	获取一组输入控件的值，如不传入参数，则获取全部组件的值
         getFieldValue	获取一个输入控件的值 */
