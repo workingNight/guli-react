@@ -35,6 +35,13 @@ yarn add react-app-rewired customize-cra babel-plugin-import 再配置一下
 
 ### 引入路由
 <BrowserRouter> <Route> <Switch>
+几种路由的跳转
+- <Redirect to="/xx"/>
+- this.props.history.push()/replace()
+
+### 路由配置
+定义路由文件，在相应页面进行注册路由
+定义config文件。menuConfig.js将路由逻辑单元抽离出来 更好修改和处理
 
 ### 引入reset  
 重置样式
@@ -67,7 +74,10 @@ Access-Control-Allow-Origin
 ### 维持登录与自动登录
 优化登录  
 - 在内存中缓存。  momoryUtils
-- 浏览器缓存 localstorge
+- 浏览器缓存 localstorge 
+  可以上github找一个store包简化操作
+  Cross-browser storage for all use cases, used across the web.
+  [github地址](https://github.com/marcuswestin/store.js)
 
 
 

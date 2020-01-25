@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Icon, message } from 'antd'
+import { Redirect } from 'react-router-dom'
 import memoryUtils from '../../utils/memoryUtils'
 import storageUtils from '../../utils/storageUtils'
 import './login.less'   /* 引入less文件 */
@@ -33,7 +34,9 @@ class Login extends Component {
                     //保存user
                     const user = result.data;
                     memoryUtils.user = user  //保存在内存中
-                    storageUtils.getUser(user) //保存在缓存中
+                    console.log('此处放入缓存中---------')
+                    storageUtils.saveUser(user) //保存在缓存中
+                    console.log('此处放入缓存中---------')
 
                     this.props.history.replace('/')
                 } else {//登录失败
@@ -69,6 +72,13 @@ class Login extends Component {
     }
 
     render() {
+        //如果用户已经登录过自动跳转到admin页面
+        const user = memoryUtils.user
+        if(user && user._id) {
+            return <Redirect to="/"/>
+        }
+
+
         /* 具有强大功能的form对象 */
         const form = this.props.form;
         const { getFieldDecorator } = form;

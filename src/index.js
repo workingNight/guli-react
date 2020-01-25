@@ -5,10 +5,10 @@ import ReactDOM from 'react-dom';
 
 import App from './App'
 import memoryUtils from './utils/memoryUtils';
-import localStorage from './utils/storageUtils'
+import storageUtils from './utils/storageUtils'
 
 //在localstorage中读取user并存储到内存中
-const user = localStorage.getUser()
+const user = storageUtils.getUser()
 memoryUtils.user = user
 
 
